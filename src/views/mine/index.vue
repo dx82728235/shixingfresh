@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="mine">
     
   </div>
 </template>
@@ -8,6 +8,7 @@
 
 
 export default {
+  name:"mine"
   
 }
 </script>

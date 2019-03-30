@@ -74,4 +74,8 @@ export default {
     }
   }
 }
+
+.router-link-active{
+    color: #2ac845;
+}
 </style>

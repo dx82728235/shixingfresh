@@ -7,11 +7,13 @@
 
 <script>
 import TabBar from '@/common/tabbar'
+import Header from '@/common/header'
 
 export default {
   name:"app",
   components:{
-    TabBar
+    TabBar,
+    Header
   }
 }
 </script>
