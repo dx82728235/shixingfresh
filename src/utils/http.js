@@ -8,17 +8,16 @@ const http = axios.create({
 http.interceptors.request.use((config)=>{
     if(config.method == 'post'){
         config.data = config.data;
-    }else if(config.method == ""){
+    }else if(config.method == 'get'){
         config.params = {...config.data};
     }
-
     return config;
-},(e)=>{
+},e=>{
     Promise.reject(e);
 })
 
 http.interceptors.response.use((res)=>{
-    if(res.Message === "返回正确"){
+    if(res.statusText === "OK"){
         return res.data;
     }
 },(e)=>{
@@ -28,7 +27,7 @@ http.interceptors.response.use((res)=>{
 export default (method,url,data={})=>{
     if(method == 'get'){
         return http.get(url,{params:data});
-    }else if(method == "post"){
+    }else if(method == 'post'){
         return http.post(url,data);
     }else{
         return;
