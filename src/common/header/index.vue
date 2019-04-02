@@ -21,8 +21,11 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  position: relative;
+  position: fixed;
+  top:0;
+  left: 0;
   width: 100%;
+  z-index: 5;
   .head_box {
     color: #666;
     display: flex;

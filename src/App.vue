@@ -19,5 +19,8 @@ export default {
 </script>
 
 <style lang="scss">
-
+#app,.home{
+  width: 100%;
+  height: 100%;
+}
 </style>
