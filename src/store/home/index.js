@@ -23,7 +23,7 @@ export default {
             state.productsList = params.FlashSaleProducts
         },
         getMutationsSearcgInfo(state,params){
-            state.searchInfo = params.keyword
+            state.searchInfo = params.keyword;
         }
     },
     actions: {
