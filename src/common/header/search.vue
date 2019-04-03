@@ -3,14 +3,30 @@
     <div class="search_box_bar">
       <div class="search_box">
         <span class="imgwrap iconfont icon-magnifier"></span>
-        <div class="search_info">海南凤梨买1赠1，快抢！</div>
+        <div class="search_info">{{searchInfo}}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import Vuex from 'vuex'
+
+export default {
+  created() {
+    this.getSearcgInfo();
+  },
+  computed: {
+    ...Vuex.mapState({
+      searchInfo:state=>state.Home.searchInfo
+    })
+  },
+  methods: {
+    ...Vuex.mapActions({
+      getSearcgInfo:"Home/getActionsSearcgInfo"
+    })
+  },
+};
 </script>
 
 <style lang="scss" scoped>

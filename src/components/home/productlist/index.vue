@@ -1,34 +1,24 @@
 <template>
     <div class="product-list">
+        <BScroll>
         <div class="product">
-            <div class="pro-content">
+            <div class="pro-content" v-for="(item,index) in productsList" >
                 <div class="pro-image">
-                    <img src="http://picpro-sz.34580.com/sz/ImageUrl/544390/160.jpeg" />
+                    <img :src="item.PictureId | toPath()" />
                 </div>
                 <div class="pro-name">
-                    小竹笋
-                </div>
-                <div class="pro-label"></div>
-                <div class="pro-price">
-                    <span>¥3.99</span>
-                    /500g
-                </div>
-            </div>
-            <div class="pro-content">
-                <div class="pro-image">
-                    <img src="http://picpro-sz.34580.com/sz/ImageUrl/544390/160.jpeg" />
-                </div>
-                <div class="pro-name">
-                    小竹笋
+                    {{item.ProductName}}
                 </div>
                 <div class="pro-label">
-                    <span>2件28.8元</span>
+                    <span>{{item.ActivityLabel}}</span>
                 </div>
                 <div class="pro-price">
-                    <span>¥3.99</span>/500g
+                    <span>{{item.MaxPeriodMoney | toPrice("￥")}}</span>{{item.Unit | toPrice("/")}}
                 </div>
             </div>
+            <p class="view-all">{{all}}</p>
         </div>
+        </BScroll>
     </div>
 </template>
 
@@ -40,8 +30,15 @@ export default {
         this.getActionsMattersNeed();
         this.getActionsRushToPay();
     },
+    data() {
+        return {
+            all:"查看全部"
+        }
+    },
     computed: {
-        
+        ...Vuex.mapState({
+            productsList:state=>state.Home.productsList
+        })
     },
     methods: {
         ...Vuex.mapActions({
@@ -55,8 +52,11 @@ export default {
 <style lang="scss">
     .product-list{
         width: 100%;
+        overflow:hidden;
         .product{
+            width:max-content;
             display: flex;
+            padding-right: .2rem;
             .pro-content{
                 display: flex;
                 flex-direction: column;
@@ -94,7 +94,7 @@ export default {
                     }
                 }
                 .pro-price{
-                    font-size:.3rem;
+                    font-size:.28rem;
                     color: #aaa;
                     width: 2rem;
                     span{
@@ -102,6 +102,12 @@ export default {
                         
                     }
                 }
+            }
+            .view-all{
+                width: .2rem;
+                font-size: .25rem;
+                color:#999;
+                padding:.15rem .3rem;
             }
         }
     }

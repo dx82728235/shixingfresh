@@ -1,11 +1,12 @@
-import {mattersNeed,anotherUrlList,rushToPay} from '@/api/home/api'
+import {mattersNeed,anotherUrlList,rushToPay,searcgInfo} from '@/api/home/api'
 export default {
     namespaced: true,
     state: {
         urlList:[],
         sellPoint:[],
         topCenterInfos:{},
-        productsList:[]
+        productsList:[],
+        searchInfo:""
     },
     mutations: {
         getmutationsUrlList(state,params){
@@ -18,8 +19,11 @@ export default {
             state.sellPoint.push(params.HomeTabInfos[0].SellPoints)
         },
         getMutationsRushToPay(state,params){
-            console.log(params)
+           // console.log(params)
             state.productsList = params.FlashSaleProducts
+        },
+        getMutationsSearcgInfo(state,params){
+            state.searchInfo = params.keyword
         }
     },
     actions: {
@@ -34,6 +38,10 @@ export default {
         async getActionsRushToPay({commit}){
             let data = await rushToPay();
             commit("getMutationsRushToPay",data.Data);
+        },
+        async getActionsSearcgInfo({commit}){
+            let data = await searcgInfo();
+            commit("getMutationsSearcgInfo",data.Data);
         }
     },
     getters:{
