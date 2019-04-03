@@ -1,10 +1,10 @@
 <template>
   <div class="search">
     <div class="search_box_bar">
-      <div class="search_box">
+      <router-link class="search_box" to='/searchPage'  tag="div">
         <span class="imgwrap iconfont icon-magnifier"></span>
         <div class="search_info">{{searchInfo}}</div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -45,6 +45,7 @@ export default {
       justify-content: center;
       align-items: center;
       .imgwrap {
+        color: #666 !important;
         font-size: 0.45rem !important;
       }
       .search_info {

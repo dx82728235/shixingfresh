@@ -4,6 +4,7 @@ import home from './home';
 import classify from './classify'
 import cart from './cart'
 import mine from './mine'
+import search from './common/search'
 
 Vue.use(Router)
 
@@ -16,6 +17,7 @@ export default new Router({
     home,
     classify,
     cart,
-    mine
+    mine,
+     search
   ]
 })
