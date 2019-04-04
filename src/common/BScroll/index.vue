@@ -11,6 +11,7 @@ export default {
     mounted () {
         this.scroll = new BScroll(this.$refs.wrapper,{
             scrollX:true,
+            click:true
         })
         //console.log(this.scroll);
     }
