@@ -3,7 +3,7 @@
     <div class="searchAll">
       <div class="search-input">
         <div class="search-input-left">
-          <input type="text" title="请输入要搜索的内容">
+          <input type="text" :value="searchPageInfo.keyword" placeholder="搜索食行美食">
         </div>
         <div class="search-input-right">
           <button>搜索</button>
@@ -39,7 +39,7 @@ export default {
   computed: {
     ...Vuex.mapState({
       searchHotInfo: state => state.Home.searchHotInfo,
-      
+      searchPageInfo: state => state.Home.searchPageInfo
     })
   },
   methods: {
@@ -61,11 +61,12 @@ export default {
     flex-direction: column;
     .search-input {
       width: 100%;
-      height: 1.12rem;
+      height: 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0.2rem 0.4rem;
+      
       .search-input-left {
         height: 100%;
         width: 5rem;
@@ -77,6 +78,7 @@ export default {
           border-radius: 5px 5px 5px 5px;
           color: #000;
           outline: none;
+          font-size: .35rem;
         }
       }
       .search-input-right {
@@ -90,6 +92,7 @@ export default {
           border: 0;
           outline: none;
           color: #fff;
+          font-size: .35rem;
         }
       }
     }

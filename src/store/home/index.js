@@ -1,4 +1,4 @@
-import {mattersNeed,anotherUrlList,rushToPay,searcgInfo,bannerSwpier} from '@/api/home/api'
+import {mattersNeed,anotherUrlList,rushToPay,searcgInfo,bannerSwpier,newUserGift} from '@/api/home/api'
 import {searchHotInfo,searchPageInfo} from '@/api/common/search/api'
 export default {
     namespaced: true,
@@ -42,8 +42,11 @@ export default {
             state.searchHotInfo = params;
         },
         getMutationsSearchPageInfo(state,params){
-            console.log(params);
-            //state.searchPageInfo
+            state.searchPageInfo = params;
+        },
+        getMutationsNewUserGift(state,params){
+            console.log(params)
+            
         }
     },
     actions: {
@@ -74,6 +77,10 @@ export default {
         async getActionsSearchPageInfo({commit}){  //搜索页面提示信息
             let data = await searchPageInfo();
             commit("getMutationsSearchPageInfo",data.Data);
+        },
+        async getActionsNewUserGift({commit}){  //新人大礼
+            let data = await newUserGift();
+            commit("getMutationsNewUserGift",data.Data);
         }
     },
     getters:{

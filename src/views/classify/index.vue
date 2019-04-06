@@ -2,6 +2,7 @@
   <div class="classify">
     <Search/>
     <Assfiy/>
+
   </div>
 </template>
 

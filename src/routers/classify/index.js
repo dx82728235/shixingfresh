@@ -4,5 +4,12 @@ export default {
     name:"classify",
     meta: { 
         tabBarFlag:true
-     }
+     },
+     children: [
+         {
+             path:'hotClassify',
+             name:'hotClassify',
+             
+         }
+     ]
 }

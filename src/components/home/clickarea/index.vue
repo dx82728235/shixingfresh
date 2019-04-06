@@ -7,6 +7,7 @@
     </div>
     <div class="mn-section">
       <div class="mn-card">
+        <BScroll>
         <div class="mn-card-item">
           <div class="mn-card-body">
             <div class="mn-card-box">
@@ -31,6 +32,7 @@
             <div class="freshes-carousel"></div>
           </div>
         </div>
+        </BScroll>
       </div>
     </div>
     <div class="mn-section member-floor">
@@ -44,7 +46,8 @@ import Vuex from "vuex";
 export default {
   name: "click-area",
   created() {
-    this.getActionsUrlList();
+    this.getUrlList();
+    this.getNewUserGift();
   },
   computed: {
     ...Vuex.mapState({
@@ -55,7 +58,8 @@ export default {
   },
   methods: {
     ...Vuex.mapActions({
-      getActionsUrlList: "Home/getActionsUrlList"
+      getUrlList: "Home/getActionsUrlList",
+      getNewUserGift:"Home/getActionsNewUserGift"
     })
   },
   data() {

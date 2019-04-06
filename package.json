@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "better-scroll": "^1.15.1",
+    "mint-ui": "^2.2.13",
     "swiper": "^4.5.0",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",
@@ -19,7 +20,7 @@
     "@vue/cli-service": "^3.5.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.10"
   },
   "postcss": {
     "plugins": {

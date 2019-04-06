@@ -3,6 +3,11 @@ import App from './App.vue'
 import router from './routers'
 import store from './store/index'
 import BScroll from '@/common/BScroll'
+import MintUI from 'mint-ui'
+
+
+Vue.use(MintUI);
+
 
 Vue.config.productionTip = false
 
@@ -16,6 +21,7 @@ Vue.filter("toPrice",(val,params)=>{
 
 //全局组件
 Vue.component("BScroll",BScroll);
+
 
 
 new Vue({

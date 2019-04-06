@@ -1,25 +1,34 @@
 <template>
     <div class="AllFlesh">
-        <ListLeft/>
-      <!--    <LisRight/> -->
-        <ListRightDemo1/>
+        <ListLeft @handleToggle="toggle"/>
+        <keep-alive>
+            <component :is="componentId"></component>
+        </keep-alive>
     </div>
 </template>
 <script>
-import ListLeft from "../listLeft/leftAss";
-/* import LisRight from "../listRight/rightAss"; */
-import ListRightDemo1 from "../listRightdemo1/index"
+import ListLeft from "../listLeft";
+import ListRight from "../listRight"; 
+import ListRightDemo from "../listRightdemo"
 export default {
     data() {
         return {
-            
+            componentId:"ListRight"
         }
     },
     components:{
         ListLeft,
-      /*   LisRight, */
-        ListRightDemo1
-
+        ListRight,
+        ListRightDemo
+    },
+    methods: {
+        toggle(index){
+            if(!index){
+                this.componentId = ListRight;
+            }else{
+                this.componentId = ListRightDemo;
+            }
+        }
     }
 }
 </script>
@@ -29,6 +38,5 @@ export default {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        
     }
 </style>
