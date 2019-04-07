@@ -6,16 +6,15 @@ export default {
       productList:[],
       hotWardCon:[],
       subCategoryCon:[],
-      subCategoryConList:[]
+      subCategoryConList:[],
+      listId:0
     },
     mutations:{
         getMutationsClassifyList(state,params){
             params.unshift({Name:"推荐分类"})
             state.productList = params;
-            //console.log(params);
         },
         getMutationsHotWardContent(state,params){
-            //console.log(params)
             state.hotWardCon = params.HotCategoryList;
         },
         getMutationsSubCategoryContent(state,params){
@@ -24,8 +23,9 @@ export default {
             params.SubCategories.map((item,index)=>{
                 state.subCategoryConList.push(item.SmallCategories)
             })
-            //console.log(params);
-            //console.log(state.subCategoryConList);
+        },
+        sendMutationsApiParameter(state,params){
+            state.listId = params
         }
     },
     actions:{
@@ -40,6 +40,9 @@ export default {
         async getActionsSubCategoryContent({commit},params){  
             let data = await subCategoryContent(params);
             commit("getMutationsSubCategoryContent",data.Data);
+        },
+        sendActionsApiParameter({commit},params){
+            commit("sendMutationsApiParameter",params)
         }
     },
     getters:{

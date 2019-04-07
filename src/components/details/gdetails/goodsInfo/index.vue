@@ -63,7 +63,6 @@
 </template>
 
 <script>
-import Nav from '@/components/gdetails/detailsNav'
 export default {
     data(){
         return{
@@ -82,9 +81,6 @@ export default {
             time1:"截单时间",
             time2:""
         }
-    },
-    components:{
-        Nav
     }
 }
 </script>

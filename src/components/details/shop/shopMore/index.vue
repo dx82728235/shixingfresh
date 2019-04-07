@@ -12,13 +12,10 @@
         <div class="info">
           <div class="weight">{{weight}}</div>
           <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
+            <span>￥{{money}}</span>
+            <span class="cart">
+              <i class="iconfont icon-gouwuche"></i>
             </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
           </div>
         </div>
       </div>
@@ -30,157 +27,10 @@
         <div class="info">
           <div class="weight">{{weight}}</div>
           <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
+            <span>￥{{money}}</span>
+            <span class="cart">
+              <i class="iconfont icon-gouwuche"></i>
             </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="inner">
-        <div class="pic">
-          <img src="http://picpro-sz.34580.com/wx/ImageUrl/541919/500.jpeg" alt>
-        </div>
-        <div class="name">{{tomato}}</div>
-        <div class="info">
-          <div class="weight">{{weight}}</div>
-          <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
-            </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="inner">
-        <div class="pic">
-          <img src="http://picpro-sz.34580.com/wx/ImageUrl/541919/500.jpeg" alt>
-        </div>
-        <div class="name">{{tomato}}</div>
-        <div class="info">
-          <div class="weight">{{weight}}</div>
-          <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
-            </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="inner">
-        <div class="pic">
-          <img src="http://picpro-sz.34580.com/wx/ImageUrl/541919/500.jpeg" alt>
-        </div>
-        <div class="name">{{tomato}}</div>
-        <div class="info">
-          <div class="weight">{{weight}}</div>
-          <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
-            </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="inner">
-        <div class="pic">
-          <img src="http://picpro-sz.34580.com/wx/ImageUrl/541919/500.jpeg" alt>
-        </div>
-        <div class="name">{{tomato}}</div>
-        <div class="info">
-          <div class="weight">{{weight}}</div>
-          <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
-            </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="inner">
-        <div class="pic">
-          <img src="http://picpro-sz.34580.com/wx/ImageUrl/541919/500.jpeg" alt>
-        </div>
-        <div class="name">{{tomato}}</div>
-        <div class="info">
-          <div class="weight">{{weight}}</div>
-          <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
-            </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="inner">
-        <div class="pic">
-          <img src="http://picpro-sz.34580.com/wx/ImageUrl/541919/500.jpeg" alt>
-        </div>
-        <div class="name">{{tomato}}</div>
-        <div class="info">
-          <div class="weight">{{weight}}</div>
-          <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
-            </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="inner">
-        <div class="pic">
-          <img src="http://picpro-sz.34580.com/wx/ImageUrl/541919/500.jpeg" alt>
-        </div>
-        <div class="name">{{tomato}}</div>
-        <div class="info">
-          <div class="weight">{{weight}}</div>
-          <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
-            </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="inner">
-        <div class="pic">
-          <img src="http://picpro-sz.34580.com/wx/ImageUrl/541919/500.jpeg" alt>
-        </div>
-        <div class="name">{{tomato}}</div>
-        <div class="info">
-          <div class="weight">{{weight}}</div>
-          <div class="price">
-            <span>
-              <i class="iconfont">&#xe652;</i>
-              {{money}}
-            </span>
-            <button>
-              <i class="iconfont">&#xe652;</i>
-            </button>
           </div>
         </div>
       </div>
@@ -194,7 +44,7 @@ export default {
     return {
       title: "您可能会喜欢",
       tomato: "西红柿（红果）",
-      weight: "5.60/500g",
+      weight: "/500g",
       money: "5.60"
     };
   }
@@ -204,24 +54,23 @@ export default {
 <style lang="scss">
 .more{
   width: 100%;
-  height: 29rem;
 .title {
   text-align: center;
   color: #999;
-  font-size: .35rem;
+  font-size: .3rem;
 }
 .gd {
   width: 100%;
-  height: 29.8rem;
   display: flex;
-  justify-content: start;
   flex-wrap: wrap;
   margin-bottom: .96rem;
   .inner {
-    width: 3.65rem;
+    width: 3.5rem;
     height: 5.75rem;
-    margin: 10px 3px;
-    padding-left: 20px;
+    margin: .2rem 0;
+    margin-left: .17rem;
+    border-radius: .1rem;
+    overflow: hidden;
     background: #fff;
     .pic {
       width: 3.5rem;
@@ -257,11 +106,17 @@ export default {
               color: #f05423;
               display: flex;
               justify-content: space-between;
-                i{
-                  font-size: .3rem;
-                }
-                button{
-                    border-radius: 60%;
+              padding-right: .18rem;
+                .cart{
+                  text-align: center;
+                  line-height: .54rem;
+                  width:.54rem;
+                  height: .54rem;
+                  border-radius: 60%;
+                  border: 1px solid #ccc;
+                  i{
+                    font-size: .25rem;
+                  }
                 }
           }
       }

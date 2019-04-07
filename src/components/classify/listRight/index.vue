@@ -1,40 +1,49 @@
 <template>
   <div class="listFleshRight">
     <div class="listFleshCon">
-        <div class="fleshAll" v-for="(item,index) in hotWardCon">
-          <img :src='item.PictureId | toPath()' alt>
-          <span>{{item.Name}}</span>
-        </div>
-        <div>
-      </div>
+      <router-link
+        tag="div"
+        class="fleshAll"
+        v-for="(item,index) in hotWardCon"
+        @touchstart.native="handleToList(index)"
+        :key='index'
+        to="/list"
+        >
+        <img :src="item.PictureId | toPath()" alt>
+        <span>{{item.Name}}</span>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import Vuex from "vuex"
+import Vuex from "vuex";
 
 export default {
-  name: "rightAss",
-  created () {
-    this.getHotWardContent()
+  name: "listRight",
+  created() {
+    this.getHotWardContent();
   },
   computed: {
     ...Vuex.mapState({
-      hotWardCon:state=>state.Classify.hotWardCon
+      hotWardCon: state => state.Classify.hotWardCon
     })
   },
   methods: {
     ...Vuex.mapActions({
-      getHotWardContent:"Classify/getActionsHotWardContent",
-    })
+      getHotWardContent: "Classify/getActionsHotWardContent",
+      sendApiParameter:"Classify/sendActionsApiParameter"
+    }),
+    handleToList(index) {
+      this.sendApiParameter(this.hotWardCon[index].Id)
+    }
   }
 };
 </script>
 <style lang="scss" scoped>
 .listFleshRight {
   width: 80%;
-   overflow: auto;
+  overflow: auto;
   .listFleshCon {
     display: flex;
     flex-wrap: wrap;
@@ -52,5 +61,7 @@ export default {
     }
   }
 }
-.listFleshRight::-webkit-scrollbar {display:none}
+.listFleshRight::-webkit-scrollbar {
+  display: none;
+}
 </style>

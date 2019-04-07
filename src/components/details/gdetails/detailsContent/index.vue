@@ -1,6 +1,5 @@
 <template>
     <div class="introduce">
-       <Nav/>
         <div class="pic">
             <img src="https://pic2.34580.cn/group1/M00/56/CC/wKgNY1whxAaAHuFrAAPH15PeBQI529.jpg" alt="" class="pic1">
             <img src="https://pic2.34580.cn/group1/M00/56/C7/wKgNY1whv9uAQ1McAAIuFDvZfPU257.jpg" alt="" class="pic2">
@@ -15,16 +14,12 @@
 </template>
 
 <script>
-import Nav from '@/components/gdetails/detailsNav'
 export default {
     name:"introduce",
     data(){
         return{
            
         }
-    },
-    components:{
-        Nav
     }
 }
 </script>

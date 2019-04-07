@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss">
-#app,.home{
+#app,.home,.product-list{
   width: 100%;
   height: 100%;
 }
