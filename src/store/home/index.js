@@ -1,4 +1,4 @@
-import {mattersNeed,anotherUrlList,rushToPay,searcgInfo,bannerSwpier,newUserGift} from '@/api/home/api'
+import {mattersNeed,anotherUrlList,rushToPay,searcgInfo,bannerSwpier,newUserGift,guessInfo} from '@/api/home/api'
 import {searchHotInfo,searchPageInfo} from '@/api/common/search/api'
 export default {
     namespaced: true,
@@ -10,7 +10,9 @@ export default {
         searchInfo:"",
         bannerUrl:[],
         searchHotInfo:"",
-        searchPageInfo:''
+        searchPageInfo:'',
+        guessInfoId:0,
+        guessInfo:JSON.parse(window.sessionStorage.getItem("guessList")) || [],
     },
     mutations: {
         getmutationsUrlList(state,params){
@@ -45,9 +47,16 @@ export default {
             state.searchPageInfo = params;
         },
         getMutationsNewUserGift(state,params){
+            //console.log(params)
+        },
+        getMutationsGuessInfo(state,params){
+            console.log(params.SourceData)
+            state.guessInfo = [...state.guessInfo,...params.SourceData];
+        },
+        getMutationsNewGuessInfo(state,params){
             console.log(params)
-            
         }
+        
     },
     actions: {
         async getActionsUrlList({commit}){  //banner下注意事项
@@ -81,7 +90,16 @@ export default {
         async getActionsNewUserGift({commit}){  //新人大礼
             let data = await newUserGift();
             commit("getMutationsNewUserGift",data.Data);
-        }
+        },
+        async getActionsGuessInfo({commit},params="0"){  
+            let data = await guessInfo(params);
+            commit("getMutationsGuessInfo",data.Data);
+            window.sessionStorage.setItem("guessList",JSON.stringify(data.Data.SourceData))
+        },
+        async getActionsNewGuessInfo({commit},params){  
+            let data = await guessInfo(params);
+            commit("getMutationsNewGuessInfo",data.Data);
+        },
     },
     getters:{
         

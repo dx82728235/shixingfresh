@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Header/>
-    <BScroll>
+    <BScroll ref="forGuessInfo">
     <div class="container">
       <Banner/>
       <Sellpoint/>
@@ -17,6 +17,7 @@
         <ProductList/>
       </div>
       <Prosection/>
+      <Guess/>
     </div>
     </BScroll>
   </div>
@@ -29,6 +30,9 @@ import ClickArea from "@/components/home/clickarea";
 import Sellpoint from "@/components/home/sellpoint";
 import ProductList from "@/components/home/productlist";
 import Prosection from "@/components/home/prosection";
+import Guess from "@/components/home/guess";
+
+import Vuex from "vuex"
 
 export default {
   components: {
@@ -39,6 +43,23 @@ export default {
     ClickArea,
     ProductList,
     Prosection,
+    Guess
+  },
+  computed: {
+    ...Vuex.mapState({
+      guessInfo:state=>state.Home.guessInfo
+    })
+  },
+   watch: {
+      guessInfo(){
+        this.$refs.forGuessInfo.update();
+      }
+  },
+  mounted(){
+    this.$refs.forGuessInfo.getGuessInfo();
+  },
+  update(){
+    this.$refs.forGuessInfo.getIh();
   }
 };
 </script>

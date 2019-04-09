@@ -18,6 +18,14 @@ Vue.filter("toPath",(val,params)=>{
 Vue.filter("toPrice",(val,params)=>{
   return params + val
 })
+Vue.filter("toPicPath",(val,params)=>{
+  
+  return "http://picpro-sz.34580.com/sz/ImageUrl/" + val.split(",")[0] + "/160.jpeg"
+})
+Vue.filter("toPirceTwo",(val,params)=>{
+  
+  return params + val.toFixed(2)
+})
 
 //全局组件
 Vue.component("BScroll",BScroll);
